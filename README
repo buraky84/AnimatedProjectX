@@ -4,14 +4,19 @@ MACOS Ventura 13.2.1
 Xcode 14.2
 Expo Version => (#expo -v) ==> 0.6.2
 Tested on IOS Simulator Iphone 14 / IOS 16.2
-Tested on Android Xiaomi 11T Iphone 14 / Android 12
+Tested on Android Simulator Pixel 6 Pro / Android 12.0
 
 TechStack
 =================================
 React Native Reanimated
 React Native Gesture Handler
 React Native Skia
-Flashlist
+Shopify@Flashlist
+
+VIDEO DEMOS
+=================================
+Please visit https://github.com/buraky84/AnimatedProjectX/tree/master/videos for video demos in action.
+
 
 
 **************************************
@@ -23,12 +28,18 @@ Features
 Animate when Adding a new character
 Animate before destroying an AnimatedTextComponent
 Auto calculate positions & center drawing on Canvas area
-Auto adjust fontSize when #of inputs are likely not fitting into screen
+Auto adjust fontSize when #of inputs are likely not horizontally fitting into screen.
 
-Animations Used
+Comments
 =================================
-opacity and x/y axis related animations
+The project could also be done fully with Reanimated without using Skia.
+But in this project i wanted to experiment Skia library integrated with Reanimated as TechStack is priorly given.
 
+Possible Improvements
+=================================
+JS performance on IOS simulator is decreasing to 50 FPS when pressing buttons fast.
+I believe this is because the communication required between React's useEffect && Skia's useSharedValueEffect hook.
+This could be improved if we implement this fully with Reanimated (using sharedValue & worklet)
 
 
 
@@ -38,4 +49,28 @@ DRAG AND DROP PROJECT (Animated Drag and Drop)
 
 Features
 =================================
-Draggable Flashlist Images with column size and vertical margin between each row are adjustable.
+Draggable Flashlist listed Images
+Column size and vertical margin between each row are adjustable, layout is auto calculated
+Dragging effects of selected item (shadow color, and release back transitions)
+Detect swap candidate and response with opacity and shadow color change
+Swap animation when releasing the item.
+
+Comments
+=================================
+Both UI and JS thread performance looks almost on 60FPS on IOS and Android simulator.
+
+Possible Improvements
+=================================
+1) Dragging item better to be on top always but there is an issue with Flashlist / Flatlist's z-Index handling.
+    Possible solution is to use CellRendererComponent instead of renderItem.
+    https://github.com/facebook/react-native/issues/28751
+
+2) Android shadow colors are not displaying. IOS has no issues.
+
+3) Android does not recognize Flashlist's centerContent prop so items sticks on top. (no issue on IOS or with Flatlist)
+
+4) Animated ScrollView could be integrated, so unlimited items can fit!
+
+
+
+
