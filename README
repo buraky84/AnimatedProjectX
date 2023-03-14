@@ -1,0 +1,41 @@
+Software Setup
+=================================
+MACOS Ventura 13.2.1
+Xcode 14.2
+Expo Version => (#expo -v) ==> 0.6.2
+Tested on IOS Simulator Iphone 14 / IOS 16.2
+Tested on Android Xiaomi 11T Iphone 14 / Android 12
+
+TechStack
+=================================
+React Native Reanimated
+React Native Gesture Handler
+React Native Skia
+Flashlist
+
+
+**************************************
+FAMILY INPUT PROJECT (Animated Text Input)
+**************************************
+
+Features
+=================================
+Animate when Adding a new character
+Animate before destroying an AnimatedTextComponent
+Auto calculate positions & center drawing on Canvas area
+Auto adjust fontSize when #of inputs are likely not fitting into screen
+
+Animations Used
+=================================
+opacity and x/y axis related animations
+
+
+
+
+**************************************
+DRAG AND DROP PROJECT (Animated Drag and Drop)
+**************************************
+
+Features
+=================================
+Draggable Flashlist Images with column size and vertical margin between each row are adjustable.
